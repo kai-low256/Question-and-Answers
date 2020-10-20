@@ -6,8 +6,8 @@ commands.on(
     question: args.text()
   }),
   async (message, { question }) => {
-    const s_channel = await discord.getGuildTextChannel('Q_AND_A_CHANNEL_ID');
-    message.reply('Your question has been sent to <#Q_AND_A_CHANNEL_ID>!');
+    const s_channel = await discord.getGuildTextChannel('762892805684723723');
+    message.reply('Your question has been sent to <#762892805684723723>!');
     message.delete();
     const embed = new discord.Embed();
     embed.setAuthor({
@@ -18,7 +18,12 @@ commands.on(
     embed.setDescription(
       '❔ Answer the question they ask by text ℹ️\n\n**When done:**\nReact with ✅ when the question has been answered'
     );
+    embed.setThumbnail({
+      url:
+        'https://cdn.icon-icons.com/icons2/933/PNG/512/poll-symbol-on-black-square-with-rounded-corners_icon-icons.com_72622.png'
+    });
     embed.setColor(0x002eff);
+    embed.setTimestamp(new Date().toISOString());
     s_channel?.sendMessage({ embed: embed }).then((x) => {
       x.addReaction('✅');
     });
