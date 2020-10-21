@@ -24,7 +24,8 @@ commands.on(
     });
     embed.setColor(0x002eff);
     embed.setTimestamp(new Date().toISOString());
-    s_channel?.sendMessage({ embed: embed })
-    message.addReaction('✅');
+    s_channel?.sendMessage({ embed: embed }).then((x) => {
+      x.addReaction('✅');
+    });
   }
 );
